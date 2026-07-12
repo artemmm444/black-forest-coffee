@@ -1,29 +1,36 @@
 export const CONFIG = {
   brand: "ЧЁРНЫЙ ЛЕС",
-  tagline: "спешелти-кофе",
+  city: "МОСКВА",
+  since: "с 2019",
 
   hero: {
-    kicker: "Обжарка под заказ · Москва",
+    index: "01",
+    label: "ОБЖАРОЧНЫЙ ЦЕХ · МОСКВА",
     lead: "Кофе, обжаренный",
-    accentWord: "вчера.",
-    tail: "У тебя — сегодня",
-    subtitle:
-      "Свежие зёрна single origin. Обжариваем малыми партиями и отправляем в день заказа — поэтому в чашке живая ягодная кислотность, а не горечь.",
+    accentWord: "вчера",
+    tail: "— у тебя сегодня",
+    manifesto:
+      "Мы обжариваем зерно малыми партиями и отправляем его в день заказа. От выбора фермы до упаковки процесс держим под контролем — чистое намерение, точные решения, внимание к тому, что действительно важно. Поэтому в чашке живая ягодная кислотность, а не горечь склада.",
     cta: "Заказать пачку",
-    ctaSub: "Доставка по РФ · оплата при получении",
     image:
-      "https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=1600&q=80",
   },
 
   product: {
     name: "Эфиопия Иргачефф",
-    origin: "Single origin · натуральная обработка",
-    notes: ["Черника", "Молочный шоколад", "Жасмин"],
-    weight: "250 г · зерно или молотый",
+    specs: [
+      ["ПРОИСХОЖДЕНИЕ", "Иргачефф, Гедео"],
+      ["ВЫСОТА", "1 950–2 200 м"],
+      ["ОБРАБОТКА", "Натуральная"],
+      ["ОБЖАРКА", "Фильтр / светлая"],
+      ["НОТЫ", "Черника · шоколад · жасмин"],
+      ["ВЕС", "250 г · зерно/молотый"],
+    ],
     price: 890,
     oldPrice: 1150,
+    batch: "N°014",
     image:
-      "https://images.unsplash.com/photo-1610889556528-9a770e32642f?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1610889556528-9a770e32642f?auto=format&fit=crop&w=1100&q=80",
   },
 
   benefits: [
@@ -34,20 +41,20 @@ export const CONFIG = {
   ],
 
   gallery: [
-    "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1524350876685-274059332603?auto=format&fit=crop&w=800&q=80",
+    { src: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=900&q=80", cap: "УПАКОВКА" },
+    { src: "https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=900&q=80", cap: "ПРОЛИВ" },
+    { src: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=900&q=80", cap: "ЭСПРЕССО" },
+    { src: "https://images.unsplash.com/photo-1524350876685-274059332603?auto=format&fit=crop&w=900&q=80", cap: "ЗЕРНО" },
   ],
 
   reviews: [
-    { name: "Марина", city: "Москва", text: "Первый кофе, который дома пахнет как в хорошей кофейне. Иргачефф — космос.", stars: 5 },
-    { name: "Олег", city: "Казань", text: "Заказал в понедельник, в среду уже варил. Свежесть чувствуется сразу.", stars: 5 },
-    { name: "Настя", city: "Санкт-Петербург", text: "Ягодная кислотность, ноль горечи. Пью без сахара впервые в жизни.", stars: 5 },
+    { name: "МАРИНА", city: "МОСКВА", text: "Первый кофе, который дома пахнет как в хорошей кофейне. Иргачефф — космос." },
+    { name: "ОЛЕГ", city: "КАЗАНЬ", text: "Заказал в понедельник, в среду уже варил. Свежесть чувствуется сразу." },
+    { name: "НАСТЯ", city: "САНКТ-ПЕТЕРБУРГ", text: "Ягодная кислотность, ноль горечи. Пью без сахара впервые в жизни." },
   ],
 
   promo: {
-    label: "Первый заказ — скидка 22%",
+    label: "ПЕРВЫЙ ЗАКАЗ · СКИДКА 22%",
     endsInHours: 6,
     stockLeft: 17,
   },
@@ -56,6 +63,6 @@ export const CONFIG = {
     phone: "+7 900 000 00 00",
     telegram: "@blackforest_coffee",
     email: "hello@blackforest.coffee",
-    address: "Москва, обжарочный цех на Хлебозаводе",
+    address: "Москва, Хлебозавод №9",
   },
 };

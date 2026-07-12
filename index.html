@@ -1,73 +1,62 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>ЧЁРНЫЙ ЛЕС — спешелти-кофе с обжаркой под заказ</title>
+<title>ЧЁРНЫЙ ЛЕС — спешелти-кофе, обжарка под заказ</title>
 <meta name="description" content="Свежеобжаренный кофе single origin. Обжарка в день заказа, доставка по России за 1–3 дня." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,400&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
 <link rel="preconnect" href="https://images.unsplash.com" />
 <link rel="stylesheet" href="styles.css" />
 
-<header class="nav" data-nav>
-  <a href="#top" class="nav__brand"><span data-brand></span></a>
-  <nav class="nav__links">
-    <a href="#product">Кофе</a>
-    <a href="#why">Почему мы</a>
-    <a href="#reviews">Отзывы</a>
-    <a href="#order" class="nav__cta">Заказать</a>
+<header class="bar" id="top">
+  <a href="#top" class="bar__brand" data-brand></a>
+  <nav class="bar__nav">
+    <a href="#product">КОФЕ,</a>
+    <a href="#why">ОБЖАРКА,</a>
+    <a href="#reviews">ОТЗЫВЫ,</a>
   </nav>
+  <a href="#order" class="bar__cta">ЗАКАЗ</a>
 </header>
 
-<section class="hero" id="top">
-  <div class="hero__grid">
-    <div class="hero__copy">
-      <p class="hero__kicker" data-reveal><span data-hero-kicker></span></p>
-      <h1 class="hero__title" data-reveal>
-        <span data-hero-lead></span>
-        <em class="mark" data-hero-accent></em>
-        <span data-hero-tail></span>
-      </h1>
-      <p class="hero__sub" data-reveal data-hero-sub></p>
-      <div class="hero__actions" data-reveal>
-        <a href="#order" class="btn btn--solid" data-hero-cta></a>
-        <span class="hero__note" data-hero-cta-sub></span>
-      </div>
+<section class="hero">
+  <div class="hero__media"><img data-hero-img alt="Свежеобжаренные кофейные зёрна" /></div>
+  <div class="hero__frame">
+    <div class="hero__meta">
+      <span data-hero-label></span>
+      <span class="hero__idx" data-hero-index></span>
     </div>
-    <figure class="hero__media" data-reveal>
-      <img data-hero-img alt="Обжаренные кофейные зёрна" loading="eager" />
-      <figcaption class="hero__badge">
-        <span class="hero__badge-n">100%</span>
-        <span>арабика,<br />свежая обжарка</span>
-      </figcaption>
-    </figure>
+    <h1 class="hero__title">
+      <span data-hero-lead></span> <em data-hero-accent></em><br /><span data-hero-tail></span>
+    </h1>
+    <p class="hero__manifesto" data-hero-manifesto></p>
+    <div class="hero__foot">
+      <a href="#order" class="btn" data-hero-cta></a>
+      <span class="clock" data-clock></span>
+    </div>
   </div>
-  <div class="ticker" aria-hidden="true"><div class="ticker__row" data-ticker></div></div>
 </section>
 
-<section class="product" id="product">
-  <figure class="product__media" data-reveal>
-    <img data-product-img alt="Пачка кофе ЧЁРНЫЙ ЛЕС" loading="lazy" />
-  </figure>
-  <div class="product__info">
-    <p class="eyebrow" data-reveal>Кофе месяца</p>
-    <h2 class="product__name" data-reveal data-product-name></h2>
-    <p class="product__origin" data-reveal data-product-origin></p>
-    <ul class="notes" data-reveal data-product-notes></ul>
-    <p class="product__weight" data-reveal data-product-weight></p>
-    <div class="price" data-reveal>
-      <span class="price__now" data-product-price></span>
-      <span class="price__old" data-product-old></span>
+<div class="ticker" aria-hidden="true"><div class="ticker__row" data-ticker></div></div>
+
+<section class="spec" id="product">
+  <div class="spec__left">
+    <p class="tag">[ КОФЕ МЕСЯЦА / <span data-product-batch></span> ]</p>
+    <h2 class="spec__name" data-product-name></h2>
+    <dl class="spec__table" data-product-specs></dl>
+    <div class="spec__buy">
+      <p class="spec__price"><span data-product-price></span> <s data-product-old></s></p>
+      <a href="#order" class="btn">Заказать со скидкой</a>
     </div>
-    <a href="#order" class="btn btn--solid" data-reveal>Заказать со скидкой</a>
   </div>
+  <figure class="spec__media"><img data-product-img alt="Пачка кофе ЧЁРНЫЙ ЛЕС" loading="lazy" /></figure>
 </section>
 
 <section class="why" id="why">
   <div class="why__head">
-    <p class="eyebrow" data-reveal>Почему берут у нас</p>
-    <h2 class="section-title" data-reveal>Свежесть, которую<br /><em>слышно носом</em></h2>
+    <p class="tag tag--light">[ ПОЧЕМУ БЕРУТ У НАС ]</p>
+    <h2 class="head">Свежесть, которую<br /><em>слышно носом</em></h2>
   </div>
-  <div class="why__list" data-benefits></div>
+  <ol class="why__list" data-benefits></ol>
 </section>
 
 <section class="gallery" aria-label="Галерея">
@@ -75,72 +64,62 @@
 </section>
 
 <section class="reviews" id="reviews">
-  <p class="eyebrow" data-reveal>Что говорят</p>
-  <h2 class="section-title" data-reveal>Отзывы <em>покупателей</em></h2>
+  <p class="tag">[ ОТЗЫВЫ ПОКУПАТЕЛЕЙ ]</p>
   <div class="reviews__grid" data-reviews></div>
 </section>
 
 <section class="order" id="order">
-  <div class="order__panel">
-    <div class="order__pitch">
-      <div class="promo" data-reveal>
-        <span class="promo__label" data-promo-label></span>
-        <div class="promo__timer">
-          <span class="promo__unit"><b data-t-h>00</b><i>час</i></span>
-          <span class="promo__unit"><b data-t-m>00</b><i>мин</i></span>
-          <span class="promo__unit"><b data-t-s>00</b><i>сек</i></span>
-        </div>
-        <p class="promo__stock" data-promo-stock></p>
-      </div>
-      <ul class="order__perks">
-        <li>Обжарка в день отправки</li>
-        <li>Оплата при получении</li>
-        <li>Доставка 1–3 дня по РФ</li>
-      </ul>
+  <aside class="order__side">
+    <p class="tag tag--light">[ ОФОРМЛЕНИЕ ЗАКАЗА ]</p>
+    <p class="order__promo" data-promo-label></p>
+    <div class="timer" aria-label="До конца акции">
+      <span class="timer__u"><b data-t-h>00</b><i>ЧАС</i></span>
+      <span class="timer__sep">:</span>
+      <span class="timer__u"><b data-t-m>00</b><i>МИН</i></span>
+      <span class="timer__sep">:</span>
+      <span class="timer__u"><b data-t-s>00</b><i>СЕК</i></span>
     </div>
+    <p class="order__stock" data-promo-stock></p>
+    <ul class="order__perks">
+      <li>ОБЖАРКА В ДЕНЬ ОТПРАВКИ</li>
+      <li>ОПЛАТА ПРИ ПОЛУЧЕНИИ</li>
+      <li>ДОСТАВКА 1–3 ДНЯ ПО РФ</li>
+    </ul>
+  </aside>
 
-    <form class="form" data-form novalidate>
-      <h3 class="form__title">Оформить заказ</h3>
+  <form class="form" data-form novalidate>
+    <label class="field">
+      <span>ИМЯ</span>
+      <input name="name" type="text" required maxlength="80" placeholder="Как к вам обращаться" autocomplete="name" />
+    </label>
+    <label class="field">
+      <span>ТЕЛЕФОН</span>
+      <input name="phone" type="tel" required maxlength="20" placeholder="+7 900 000-00-00" autocomplete="tel" />
+    </label>
+    <div class="field-row">
       <label class="field">
-        <span>Имя</span>
-        <input name="name" type="text" required maxlength="80" placeholder="Как к вам обращаться" autocomplete="name" />
+        <span>ПОМОЛ</span>
+        <select name="grind"><option>Зерно</option><option>Эспрессо</option><option>Турка</option><option>Фильтр</option></select>
       </label>
       <label class="field">
-        <span>Телефон</span>
-        <input name="phone" type="tel" required maxlength="20" placeholder="+7 900 000-00-00" autocomplete="tel" />
+        <span>ПАЧЕК</span>
+        <select name="qty"><option>1</option><option>2</option><option>3</option><option>4</option></select>
       </label>
-      <div class="field-row">
-        <label class="field">
-          <span>Помол</span>
-          <select name="grind">
-            <option>Зерно</option>
-            <option>Для эспрессо</option>
-            <option>Для турки</option>
-            <option>Для фильтра</option>
-          </select>
-        </label>
-        <label class="field">
-          <span>Пачек</span>
-          <select name="qty">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-          </select>
-        </label>
-      </div>
-      <button type="submit" class="btn btn--solid form__submit">Оформить со скидкой 22%</button>
-      <p class="form__status" data-status role="status" aria-live="polite"></p>
-      <p class="form__fine">Нажимая кнопку, вы соглашаетесь с обработкой данных. Это демо-форма для портфолио.</p>
-    </form>
-  </div>
+    </div>
+    <button type="submit" class="btn btn--block form__submit">ОФОРМИТЬ СО СКИДКОЙ 22%</button>
+    <p class="form__status" data-status role="status" aria-live="polite"></p>
+    <p class="form__fine">Нажимая кнопку, вы соглашаетесь с обработкой данных. Демо-форма для портфолио.</p>
+  </form>
 </section>
 
 <footer class="footer">
   <div class="footer__big" data-brand aria-hidden="true"></div>
-  <div class="footer__cols">
+  <div class="footer__grid">
     <ul class="footer__contacts" data-contacts></ul>
-    <p class="footer__muted">Демо-лендинг · собран для портфолио</p>
+    <div class="footer__end">
+      <span class="clock" data-clock></span>
+      <span class="footer__muted">ДЕМО-ЛЕНДИНГ · СОБРАН ДЛЯ ПОРТФОЛИО</span>
+    </div>
   </div>
 </footer>
 
