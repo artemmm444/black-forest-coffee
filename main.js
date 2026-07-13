@@ -131,3 +131,32 @@ if (location.search.includes("selftest")) {
   console.assert(remaining(deadline + 5000).h === 0, "clamp");
   console.log("selftest ok");
 }
+
+/* Parallax Beans */
+const parallaxBeans = $$('.bean');
+let frameId;
+window.addEventListener('scroll', () => {
+  if (frameId) cancelAnimationFrame(frameId);
+  frameId = requestAnimationFrame(() => {
+    const scrolled = window.scrollY;
+    parallaxBeans.forEach(bean => {
+      const speed = parseFloat(bean.dataset.speed) || 0.5;
+      bean.style.setProperty('--y', `${scrolled * speed}px`);
+    });
+  });
+}, { passive: true });
+
+/* Magnetic Buttons */
+const magneticBtns = $$('.btn');
+magneticBtns.forEach(btn => {
+  btn.style.transition = 'transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.3s, color 0.3s';
+  btn.addEventListener('mousemove', (e) => {
+    const rect = btn.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    btn.style.transform = `translate(${x * 0.25}px, ${y * 0.25}px)`;
+  });
+  btn.addEventListener('mouseleave', () => {
+    btn.style.transform = 'translate(0, 0)';
+  });
+});

@@ -67,6 +67,22 @@ s { text-decoration: line-through; }
 .btn--block { display: block; width: 100%; text-align: center; }
 
 /* BAR */
+.bean {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" fill="%2346402f" xmlns="http://www.w3.org/2000/svg"><path d="M12,2C6.47,2,2,6.47,2,12s4.47,10,10,10s10-4.47,10-10S17.53,2,12,2z M15.25,16.5C13.56,15.11,12,13,12,12 s1.56-2.11,3.25-3.5C14.77,8.74,14.41,9.08,14.07,9.45c-2.39,2.58-2.67,6.58-2.67,6.58s1.65,0.76,4.02-0.89 C15.08,15.54,15.18,16.03,15.25,16.5z"/></svg>');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.15;
+  will-change: transform;
+  transform: translateY(var(--y, 0px)) rotate(var(--rot, 0deg));
+}
+.bean-1 { --rot: 15deg; top: 10%; left: 10%; width: 70px; height: 70px; filter: blur(5px); }
+.bean-2 { --rot: -25deg; top: 35%; right: 5%; width: 100px; height: 100px; filter: blur(8px); opacity: 0.25; }
+.bean-3 { --rot: 45deg; top: 60%; left: 3%; width: 45px; height: 45px; filter: blur(2px); opacity: 0.2; }
+.bean-4 { --rot: -10deg; top: 85%; right: 12%; width: 60px; height: 60px; filter: blur(4px); }
+.bean-5 { --rot: 80deg; top: 25%; left: 20%; width: 35px; height: 35px; filter: blur(1px); }
 .bar {
   position: fixed;
   inset: 0 0 auto 0;
@@ -365,6 +381,38 @@ s { text-decoration: line-through; }
   .spec__row { grid-template-columns: 8.5rem 1fr; }
   .field-row { grid-template-columns: 1fr; }
 }
+}
 @media (prefers-reduced-motion: reduce) {
   * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
+
+/* ---- Steam Animation ---- */
+.steam-container {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 60vh;
+  pointer-events: none;
+  z-index: 1;
+}
+.steam {
+  position: absolute;
+  bottom: -50px;
+  background: #ffffff;
+  border-radius: 50%;
+  filter: blur(28px);
+  opacity: 0;
+  animation: rise 8s infinite cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.steam.s1 { left: 40%; width: 100px; height: 100px; animation-duration: 9s; animation-delay: 0s; }
+.steam.s2 { left: 55%; width: 150px; height: 150px; animation-duration: 11s; animation-delay: 2s; }
+.steam.s3 { left: 48%; width: 120px; height: 120px; animation-duration: 10s; animation-delay: 4s; }
+
+@keyframes rise {
+  0% { transform: translateY(0) scale(1) rotate(0deg); opacity: 0; }
+  20% { opacity: 0.25; }
+  80% { opacity: 0.15; }
+  100% { transform: translateY(-70vh) scale(3.5) rotate(45deg); opacity: 0; }
 }
