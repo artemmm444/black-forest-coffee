@@ -71,9 +71,8 @@ s { text-decoration: line-through; }
   position: absolute;
   width: 40px;
   height: 40px;
-  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" fill="%2346402f" xmlns="http://www.w3.org/2000/svg"><path d="M12,2C6.47,2,2,6.47,2,12s4.47,10,10,10s10-4.47,10-10S17.53,2,12,2z M15.25,16.5C13.56,15.11,12,13,12,12 s1.56-2.11,3.25-3.5C14.77,8.74,14.41,9.08,14.07,9.45c-2.39,2.58-2.67,6.58-2.67,6.58s1.65,0.76,4.02-0.89 C15.08,15.54,15.18,16.03,15.25,16.5z"/></svg>');
-  background-size: contain;
-  background-repeat: no-repeat;
+  background: var(--ink-soft);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
   opacity: 0.15;
   will-change: transform;
   transform: translateY(var(--y, 0px)) rotate(var(--rot, 0deg));
@@ -123,7 +122,7 @@ s { text-decoration: line-through; }
 }
 .hero__frame {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   width: 100%;
   padding: 0 var(--pad) clamp(1.6rem, 4vw, 3rem);
   display: grid;
@@ -395,7 +394,7 @@ s { text-decoration: line-through; }
   width: 100%;
   height: 60vh;
   pointer-events: none;
-  z-index: 1;
+  z-index: 2;
 }
 .steam {
   position: absolute;
