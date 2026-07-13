@@ -380,7 +380,7 @@ s { text-decoration: line-through; }
   .spec__row { grid-template-columns: 8.5rem 1fr; }
   .field-row { grid-template-columns: 1fr; }
 }
-}
+
 @media (prefers-reduced-motion: reduce) {
   * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
 }
