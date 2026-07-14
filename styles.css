@@ -487,3 +487,22 @@ s { text-decoration: line-through; }
   .hero__media img { animation: none; }
   .rv { opacity: 1; transform: none; }
 }
+
+/* ===== полароид-подача товара и бумажные отзывы ===== */
+.spec__media {
+  border: 1px solid var(--ink);
+  padding: 14px 14px 40px;
+  background: #fff;
+  box-shadow: 8px 10px 0 rgba(22,19,13,.12);
+  transform: rotate(-1.2deg);
+  transition: transform .5s cubic-bezier(.22,1,.36,1), box-shadow .5s ease;
+}
+.spec__media:hover { transform: rotate(0deg) scale(1.01); box-shadow: 12px 14px 0 rgba(22,19,13,.16); }
+.review { transition: transform .45s cubic-bezier(.22,1,.36,1); }
+.review:nth-child(odd) { transform: rotate(-.5deg); }
+.review:nth-child(even) { transform: rotate(.6deg); }
+.review:hover { transform: rotate(0) translateY(-5px); }
+.ticker:hover .ticker__row { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+  .spec__media, .review { transform: none; }
+}
