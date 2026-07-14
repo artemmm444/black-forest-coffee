@@ -223,3 +223,18 @@ magneticBtns.forEach(btn => {
     btn.style.transform = 'translate(0, 0)';
   });
 });
+
+/* появление секций при скролле */
+const rvTargets = $$(".why__item, .gallery__grid figure, .review, .spec__media, .spec__left, .quiz__box, .order__side, .order .form");
+if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  rvTargets.forEach((el, i) => {
+    el.classList.add("rv");
+    el.style.setProperty("--rv-d", (i % 4) * 90 + "ms");
+  });
+  const rvIO = new IntersectionObserver((entries) => {
+    entries.forEach((en) => {
+      if (en.isIntersecting) { en.target.classList.add("rv-in"); rvIO.unobserve(en.target); }
+    });
+  }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
+  rvTargets.forEach((el) => rvIO.observe(el));
+}

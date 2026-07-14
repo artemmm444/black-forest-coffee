@@ -468,3 +468,22 @@ s { text-decoration: line-through; }
   padding: 0 0 2px;
 }
 .quiz__again:hover { border-color: var(--ink); }
+
+/* ===== живой hero и появление секций ===== */
+.hero__media img {
+  animation: kenburns 26s ease-in-out infinite alternate;
+  will-change: transform;
+}
+@keyframes kenburns {
+  from { transform: scale(1) translate(0, 0); }
+  to { transform: scale(1.12) translate(-1.5%, -2%); }
+}
+.rv { opacity: 0; transform: translateY(26px); transition: opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1); transition-delay: var(--rv-d, 0ms); }
+.rv-in { opacity: 1; transform: none; }
+.gallery__grid figure { overflow: hidden; }
+.gallery__grid img { transition: transform .7s cubic-bezier(.22,1,.36,1); }
+.gallery__grid figure:hover img { transform: scale(1.06); }
+@media (prefers-reduced-motion: reduce) {
+  .hero__media img { animation: none; }
+  .rv { opacity: 1; transform: none; }
+}
