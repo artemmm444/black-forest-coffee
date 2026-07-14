@@ -95,6 +95,69 @@ function tickTimer() {
 tickTimer();
 setInterval(tickTimer, 1000);
 
+/* квиз: подбор помола и объёма */
+const QUIZ = [
+  {
+    q: "Как завариваешь кофе?",
+    a: [
+      { t: "Эспрессо-машина или рожок", grind: "Эспрессо" },
+      { t: "Турка или джезва", grind: "Турка" },
+      { t: "Фильтр, пуровер, аэропресс", grind: "Фильтр" },
+      { t: "Есть своя кофемолка", grind: "Зерно" },
+    ],
+  },
+  {
+    q: "Сколько чашек в день пьёшь?",
+    a: [
+      { t: "1–2 чашки", qty: 1, note: "Пачки 250 г хватит на месяц." },
+      { t: "3–4 чашки", qty: 2, note: "Две пачки — свежий запас на месяц." },
+      { t: "Пьём вдвоём или всей семьёй", qty: 3, note: "Три пачки выгоднее по доставке." },
+    ],
+  },
+];
+
+const quizStepEl = $("[data-quiz-step]");
+const quizResultEl = $("[data-quiz-result]");
+let quizPick = {};
+
+function quizRender(step) {
+  const item = QUIZ[step];
+  if (!item) return quizFinish();
+  quizResultEl.hidden = true;
+  quizStepEl.hidden = false;
+  quizStepEl.innerHTML = `
+    <p class="quiz__q"><span>${step + 1}/${QUIZ.length}</span> ${esc(item.q)}</p>
+    <div class="quiz__answers">
+      ${item.a.map((a, i) => `<button type="button" class="quiz__a" data-i="${i}">${esc(a.t)}</button>`).join("")}
+    </div>`;
+  $$(".quiz__a", quizStepEl).forEach((btn) =>
+    btn.addEventListener("click", () => {
+      Object.assign(quizPick, item.a[+btn.dataset.i]);
+      quizRender(step + 1);
+    })
+  );
+}
+
+function quizFinish() {
+  quizStepEl.hidden = true;
+  quizResultEl.hidden = false;
+  $("[data-quiz-verdict]").textContent =
+    `Твой вариант: «${quizPick.grind}» × ${quizPick.qty} шт.`;
+  $("[data-quiz-note]").textContent =
+    `${quizPick.note} ${p.name} в этом помоле раскрывается ягодами, без горечи.`;
+}
+
+$("[data-quiz-apply]").addEventListener("click", () => {
+  const f = $("[data-form]");
+  f.grind.value = quizPick.grind;
+  f.qty.value = String(quizPick.qty);
+});
+$("[data-quiz-again]").addEventListener("click", () => {
+  quizPick = {};
+  quizRender(0);
+});
+quizRender(0);
+
 /* форма — валидация + подтверждение */
 const form = $("[data-form]");
 const statusEl = $("[data-status]");
